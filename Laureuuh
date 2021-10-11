@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<body>
+
+  <h1>Un titre à la hauteur de tes attentes</h1>
+
+
+  <p>Félicitation ! Tu es tombée sur une page exceptionnellement vide !</p>
+
+
+    <ul>
+
+    <li>le premier point d'une liste<strong>incroyable</strong></li>
+	  <li>le deuxième d'une liste<em>extraordinaire</em></li>
+	  <li>le troisième point d'une liste normale finalement</li>
+
+    </ul>
+</body>
