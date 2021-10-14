@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <script>
+function createDeck(){
+    let cards = [ "2" , "3" , "4" , "5" , "6" , "7" , "8" , "9" , "10" , "V" , "D" , "R" , "A"];
+    let motif = ["♦️" , "♠️" , "♣️" , "♥️"];
+    let deck = [];
+    for(let cartes = 0; cartes < 13; cartes++){
+        for(let color = 0; color < 4; color++){
+        deck.push(cards[cartes]+motif[color]);
+        }
+    }
+    deck = shuffle(deck)
+    return deck
+}    
+
+function shuffle(array){
+    let currentIndex = array.length, randomIndex;
+    while (currentIndex != 0){
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex--;
+        [array[currentIndex], array[randomIndex]] = [
+            array[randomIndex], array[currentIndex]];
+    }
+    return array;
+}
+let newDeck = createDeck()
+console.log(newDeck)
+ </script>
+</body>
+</html>
