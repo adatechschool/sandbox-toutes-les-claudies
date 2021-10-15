@@ -23,9 +23,9 @@
             return array;
         }
         function creatDeck() {
-            let card = ['Ace', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'Queen', 'King']
-            let color = ["♣️", "♠︎", "♡", "♢"]
-            let deck = []
+            let card = ['Ace', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'Queen', 'King'] //tableau de toute les cartes comprises dans une couleur
+            let color = ["♣️", "♠︎", "♡", "♢"] //tableau de nos quatre coulleur
+            let deck = [] //tableau pour répertorier la totalité de nos cartes
             for (let cartes = 0; cartes < 13; cartes++) {
                 for (let couleur = 0; couleur < 4; couleur++) {
                     deck.push(card[cartes] + color[couleur])
@@ -38,26 +38,51 @@
 
         function deal() {
 
-            const player1 = []
-            const player2 = []
-            let players = []
-            for (let i = 0; i < 4; i++) {
+            const player1 = []  //joueur 1 avec tableau vide qu'on remplira avec sa main de départ 'completDeck[i]'
+            const player2 = [] //joueur 2 avec tableau vide qu'on remplira avec sa main de départ 'completDeck[i]'
+            let players = [] //tableau pour répertorier nos joueurs
+            for (let i = 0; i < 4; i++) { //tant que i n'arrive pas a i = 3 la boucle continue 
                 completDeck[i]
-                if (i == 0) { player1.push(completDeck[i]) }
+                if (i == 0) { player1.push(completDeck[i]) } //push sert a introduire une information dans un tableau 
                 if (i == 2) { player1.push(completDeck[i]) }
                 if (i == 1) { player2.push(completDeck[i]) }
                 if (i == 3) { player2.push(completDeck[i]) }
             }
-            players.push(player1, player2)
-            console.log(players)
+            players.push(player1, player2) //on remplit notre tableau players avec nos joueurs
+            console.log(players) // fait apparaître notre tableau dans la console
             return players
         }
         let Players = deal()
 
         function flop() {
-            
+            const river = []
+            const brulé = []
+            let rivière = [] 
+            for (let i = 4 ; i < 12; i++) {
+                completDeck[i]
+                if (i == 5) { river.push(completDeck[i]) }
+                if (i == 6) { river.push(completDeck[i]) }
+                if (i == 7) { river.push(completDeck[i]) }
+                if (i == 9) { river.push(completDeck[i]) }
+                if (i == 11) { river.push(completDeck[i]) }
+                if (i == 4) {brulé.push(completDeck[i]) }
+                if (i == 8) {brulé.push(completDeck[i]) }
+                if (i == 10) {brulé.push(completDeck[i]) }
+            }
+            rivière.push(river,brulé) //enlever brulé ou non ne change en rien le code c'est juste une info sur les cartes
+            console.log(rivière)
+            return rivière
         }
-        
+        let rivière = flop()
+
+        function valeur() {
+            class Rectangle {
+                constructor(hauteur, largeur) {
+                this.hauteur = hauteur;
+                this.largeur = largeur;
+                }
+            }
+        }
     </script>
 </body>
 
