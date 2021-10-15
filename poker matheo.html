@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <meta>
+</head>
+     <body>
+    <p></p>
+<script>
+ function creatDeck(){
+    let numbers = [ "1" ,"2" ,"3" , "4" , "5" , "6" , "7" , "8" , "9" , "10" , "v" , "D" , "K"]
+  let color = [ "carreau" , "pique" , "trèfle noir" , "cœurs"]
+let deck = []
+      for(let cartes = 0; cartes < 13; cartes++){
+         for(let colors = 0; colors < 4; colors++){
+            deck.push(numbers[cartes]+color[colors])
+         }
+
+
+        }
+        deck = shuffle(deck)
+        return deck 
+ }
+ 
+
+ function shuffle(array){
+   let currentIndex = array.length, randomIndex;
+
+   while (currentIndex != 0){
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+      [array[currentIndex], array[randomIndex]] = [
+      array[randomIndex], array[currentIndex]]
+   }
+   return array 
+   
+ } 
+   let completDeck = creatDeck()
+  console.log(completDeck)
+
+</script>
+</body>
+</html>
