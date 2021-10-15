@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Poker Texas hold’em</title>
+    <style>
+    </style>
+</head>
+<body>
+<script>
+const couleur = ["spades", "hearts", "diamonds", "clubs"];
+const nombre = ["2","3","4","5","6","7","8","9","10","Valet","Dame","Roi","As"];
+
+
+function createDeck()
+{
+    let deck = [];
+    for(let i = 0; i < couleur.length; i++)  
+    {
+        for(let x = 0; x < nombre.length; x++)
+        {
+            deck.push(nombre[x] + couleur[i]);
+        }
+    }
+    return deck;
+
+}
+let newDeck = createDeck()
+
+function shuffle(array){
+    let currentIndex = array.length
+    let randomIndex;
+    while(currentIndex != 0){
+         randomIndex= Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+
+    [array[currentIndex], array[randomIndex]] = [
+      array[randomIndex], array[currentIndex]];
+
+    }     
+    
+    
+
+    return array
+}
+
+let shuffleDeck = shuffle(newDeck)
+console.log(shuffleDeck)
+</script>
+</body>
+</html>
