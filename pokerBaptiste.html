@@ -1,42 +1,64 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-        <meta>
+    <meta>
 </head>
-     <body>
+
+<body>
     <p></p>
-<script>
-function shuffle(array) {
-  let currentIndex = array.length,  randomIndex;
-  
-  while (currentIndex != 0) {
+    <script>
+        function shuffle(array) {
+            let currentIndex = array.length, randomIndex;
 
-    randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex--;
+            while (currentIndex != 0) {
 
-    // echange de place avec l'index
-    [array[currentIndex], array[randomIndex]] = [
-      array[randomIndex], array[currentIndex]];
-  }
+                randomIndex = Math.floor(Math.random() * currentIndex);
+                currentIndex--;
 
-  return array;
-}   
-   function creatDeck(){
-        let card = ['Ace', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'Queen', 'King']
-        let color = ["♣️","♠︎","♡","♢"]
-        let deck = []
-        for(let cartes = 0; cartes < 13; cartes++){
-            for(let couleur = 0; couleur < 4; couleur++){
-                deck.push(card[cartes]+color[couleur])
+                // echange de place avec l'index
+                [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
             }
-        }   
-        deck = shuffle(deck)
-        return deck
-    }
 
-    
-let completDeck = creatDeck()
-console.log(completDeck)
-</script>
+            return array;
+        }
+        function creatDeck() {
+            let card = ['Ace', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'Queen', 'King']
+            let color = ["♣️", "♠︎", "♡", "♢"]
+            let deck = []
+            for (let cartes = 0; cartes < 13; cartes++) {
+                for (let couleur = 0; couleur < 4; couleur++) {
+                    deck.push(card[cartes] + color[couleur])
+                }
+            }
+            deck = shuffle(deck)
+            return deck
+        }
+        let completDeck = creatDeck()
+
+        function deal() {
+
+            const player1 = []
+            const player2 = []
+            let players = []
+            for (let i = 0; i < 4; i++) {
+                completDeck[i]
+                if (i == 0) { player1.push(completDeck[i]) }
+                if (i == 2) { player1.push(completDeck[i]) }
+                if (i == 1) { player2.push(completDeck[i]) }
+                if (i == 3) { player2.push(completDeck[i]) }
+            }
+            players.push(player1, player2)
+            console.log(players)
+            return players
+        }
+        let Players = deal()
+
+        function flop() {
+            
+        }
+        
+    </script>
 </body>
+
 </html>
