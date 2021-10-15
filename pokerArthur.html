@@ -54,6 +54,28 @@
             return players
         }
         let Players = deal()
+
+        function flop() {
+            const river = []
+            const brulé = []
+            let rivière = []
+            for (let i = 4 ; i < 12; i++) {
+                completDeck[i]
+                if (i == 5) { river.push(completDeck[i]) }
+                if (i == 6) { river.push(completDeck[i]) }
+                if (i == 7) { river.push(completDeck[i]) }
+                if (i == 9) { river.push(completDeck[i]) }
+                if (i == 11) { river.push(completDeck[i]) }
+                if (i == 4) {brulé.push(completDeck[i]) }
+                if (i == 8) {brulé.push(completDeck[i]) }
+                if (i == 10) {brulé.push(completDeck[i]) }
+            }
+            rivière.push(river,brulé) //enlever brulé ou non ne change en rien le code c'est juste une info sur les cartes
+            console.log(rivière)
+            return rivière
+        }
+        let rivière = flop()
+
   </script>
 </body>
 
