@@ -1,4 +1,4 @@
-const values = ["As", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
+const values = ["As", "2", "3", "4", "5", "6", "7", "8", "9", "T", "J", "Q", "K"];
 const suits = ["♠︎", "♣︎", "♡", "♢"];
 const cards = [];
 
@@ -88,7 +88,12 @@ function showdown(tapis, player) {
   return newHand;
 };
 
-showdown(tapis, playerOne);
-showdown(tapis, playerTwo);
+var playerOneHand = showdown(tapis, playerOne);
+var playerTwoHand = showdown(tapis, playerTwo);
 
-// faire des cartes sous forme d'objets avec valeur, type, représentation pour faciliter la vérification.
+// changer le 10 en T et faire un compteur qui compte le nombre de fois que ça includes()
+
+// paire, double paire, brelan, suite, couleur, full (brelan + paire), quinte flush, quinte flush royale
+
+//vérifier paire : includes 1 --> if i= 2 : paire, if 3
+console.log(playerOneHand.includes("3"));
