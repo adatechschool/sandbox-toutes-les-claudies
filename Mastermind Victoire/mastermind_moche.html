@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        
+    </head>
+    <body>
+        <script>
+            const colors = ['blue', 'red', 'yellow', 'green', 'white', 'black', 'pink', 'purple']
+            const secretCode = getCode()
+            var answers = 'your answers and results:\n'
+
+            function getCode(){
+                let code = []
+                for(let i = 0; i < 4; i++) {
+                    num = Math.floor(Math.random() * 8)
+                    code.push(colors[num])
+                }
+                return code
+            }
+
+            function round(myGuess) {
+                let copy = secretCode.slice(0)
+                let colorOk = 0
+                let allOk = 0
+                for(let i = 0; i < 4; i++){
+                    if(myGuess[i] == copy[i]) {
+                        allOk += 1 
+                        copy.splice(i,1,'x')
+                    }
+                }
+                for(let i = 0; i < 4; i++) {
+                    if(copy.includes(myGuess[i])) {
+                        colorOk += 1
+                    }
+                }
+                return [allOk, colorOk] 
+            }
+
+            function game(){
+                let guess
+                let result = []
+                while(result[0] != 4) {
+                    guess = prompt("enter four colours separated by spaces among blue, red, yellow, green, white, black, pink, purple")
+                    guess = guess.split(" ")
+                    result = round(guess)
+                    answers = answers + 'guess: ' + guess + ', result: ' + result + '\n'
+                    alert('your result for this round: ' + result)
+                    alert(answers)
+                }
+                alert("you win")
+            }
+
+            game()
+        </script>
+    </body>
+</html>
