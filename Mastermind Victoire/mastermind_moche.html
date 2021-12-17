@@ -26,7 +26,7 @@
                 for(let i = 0; i < 4; i++){
                     if(myGuess[i] == copy[i]) {
                         allOk += 1 
-                        copy.splice(i,1,'x')
+                        copy[i] = 'x'
                     }
                 }
                 for(let i = 0; i < 4; i++) {
